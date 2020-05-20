@@ -23,5 +23,5 @@ clie:
 
 
 clean:
-	rm -rf ./src/*o
+	rm -rf ./src/*.o
 	rm -rf serveur client
