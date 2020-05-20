@@ -2,26 +2,8 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <limits.h>
-#include <strings.h>
+#include <string.h>
 #include "chatbot.h"
-
-// hash table implementation from here
-// https://gist.githubusercontent.com/tonious/1377667/raw/c814d0833c8699dc017871931a5c5bee11af0f64/hash.c
-
-struct entry_s {
-  char *key;
-  char *value;
-  struct entry_s *next;
-};
-
-typedef struct entry_s entry_t;
-
-struct hashtable_s {
-  int size;
-  struct entry_s **table;
-};
-
-typedef struct hashtable_s hashtable_t;
 
 
 /* Create a new hashtable. */
@@ -153,11 +135,11 @@ char *ht_get( hashtable_t *hashtable, char *key ) {
 
 }
 
-int main(void) {
+/*int main(void) {
 
   char line[LINELENGTH];
   char *word;
-  printf("$ Chatbot v1.0.0!\n");
+  printf("$ this is the tcp-ip-chatbot\n");
 
   hashtable_t *hashtable = ht_create(65536);
   ht_set(hashtable, "hi", "hello");
@@ -168,12 +150,12 @@ int main(void) {
   ht_set(hashtable, "What", "It is clear, ain't it?");
 
   while(1) {
-    printf("\n$ (user) ");
+    printf("\n$ (client) ");
     fgets(line, LINELENGTH, stdin);
     if (strlen(line) <= 1) break; /*exit program*/
-    word = strtok(line, SEPCHARS); /*Find first word */
+   /* word = strtok(line, SEPCHARS); /*Find first word */
 
-    while (word != NULL) {
+  /*  while (word != NULL) {
       if (strncasecmp(word, "exit", 150) == 0) {
         exit(0);
       }
@@ -186,4 +168,4 @@ int main(void) {
       word = strtok(NULL, SEPCHARS);
     }
   }
-}
+}*/
