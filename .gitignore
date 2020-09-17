@@ -1,5 +1,7 @@
 ./src/*.o
 
+./*.o
+
 serveur
 
 client
